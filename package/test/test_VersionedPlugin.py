@@ -1,7 +1,7 @@
 import test_settings
 from test_settings import TEST_MESSAGE
 import unittest
-import os 
+import os
 
 from yapsy.VersionedPluginManager import VersionedPluginManager
 
@@ -11,7 +11,7 @@ class VersionedTestsCase(unittest.TestCase):
     Test the correct loading of a simple plugin as well as basic
     commands.
     """
-    
+
     def setUp(self):
         """
         init
@@ -19,7 +19,7 @@ class VersionedTestsCase(unittest.TestCase):
         # create the plugin manager
         self.versionedPluginManager = VersionedPluginManager(
             directories_list=[os.path.join(
-					os.path.dirname(os.path.abspath(__file__)),"plugins")],
+                              os.path.dirname(os.path.abspath(__file__)),"plugins")],
             plugin_info_ext="version-plugin",
             )
         # load the plugins that may be found
@@ -68,10 +68,10 @@ class VersionedTestsCase(unittest.TestCase):
         self.assertEqual(sole_category,self.plugin_info.category)
         self.assertEqual("1.2",str(self.plugin_info.version))
 
-        
+
     def testLatestPluginOfCategory(self):
         self.plugin_loading_check()
-        
+
     def testActivationAndDeactivation(self):
         """
         Test if the activation procedure works.
@@ -90,8 +90,8 @@ class VersionedTestsCase(unittest.TestCase):
         # make the things clear: the plugin chosen for activation is
         # the one with the latest version)
         self.assertEqual("1.2",str(self.plugin_info.version))
-        
-        
+
+
     # def testDirectActivationAndDeactivation(self):
     #     """
     #     Test if the activation procedure works when directly activating a plugin.
@@ -106,8 +106,8 @@ class VersionedTestsCase(unittest.TestCase):
 
 
 
-    
-        
+
+
 suite = unittest.TestSuite([
         unittest.TestLoader().loadTestsFromTestCase(VersionedTestsCase),
         ])
