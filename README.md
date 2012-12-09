@@ -20,3 +20,6 @@ category or sortCriteria or external functions or based on info in plugin-descri
 * new: sortPlugins(): sort a given list of plugins based on some metrics (default uses quicksort and the value "priority" in plugin-description
 * new: __qsort2d(): quicksort2d (not from me)
 * new: __dict_has_keys(): check if a dict has a sequence of keys..
+
+
+Please find the original  README.txt / LICENSE ... in subfolder package
